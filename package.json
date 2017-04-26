@@ -1,14 +1,13 @@
 {
   "name": "test-inbox",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/index.js",
   "scripts": {
     "e2e": "jest --config=e2e/config.json",
     "lint": "eslint . --cache",
     "build": "gulp build --gulpfile config/gulpfile.js --cwd .",
     "watch": "gulp watch --gulpfile config/gulpfile.js --cwd .",
-    "travis": "./bin/travis.sh",
-    "postinstall": "npm run build"
+    "travis": "./bin/travis.sh"
   },
   "license": "MIT",
   "dependencies": {
