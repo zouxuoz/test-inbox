@@ -6,7 +6,7 @@ function resolvePath(relativePath) {
 }
 
 module.exports = {
-  buildDir: resolvePath('build'),
+  buildDir: resolvePath('lib'),
   jsPattern: resolvePath('src/**/*.js'),
   srcDir: resolvePath('src'),
 };
