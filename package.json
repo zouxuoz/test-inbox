@@ -1,7 +1,7 @@
 {
   "name": "test-inbox",
-  "version": "0.1.0",
-  "main": "build/index.js",
+  "version": "0.1.1",
+  "main": "lib/index.js",
   "scripts": {
     "e2e": "jest --config=e2e/config.json",
     "lint": "eslint . --cache",

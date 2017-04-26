@@ -10,6 +10,7 @@ env:
 deploy:
   provider: npm
   email: zouxuoz@gmail.com
+  skip_cleanup: true
   api_key:
     secure: keRxiWTAuYvxnyOBs30z2Wr5OAEeq11IiCPVt9okP4qfki1y9/wg7xS+WL2iHPAmiJt/4Nks/vqFdwLHl0rRMw9IoMX4D6fjggrvdfQNkosvdPm2ToYYC2Y4CqOYJLVAgzuCvAWlJaIqUxYyOpV4d/4Lu2KBy390DrvKLCsSN9xISmPs+3TXvfUPe8+5i/aMclDps9KP11L0XOwfZVjtfk4/H6lB1NjyPsgEGMiqc9vmXqn+oDIpHspft6Lp8Dm9GtSVhJhG8uJu+5k6009NT1opcvmxYSwXjZ88702KKlAAh/ysWIJho1tVRO/f/ePKA9Zm90xXjvqD7y/HMH9+qPYcO59OnLc6BOGX2SxIo8rVZgZ5HR9FOTWaaLxwINDrcLtoTDWZ69VYSnpknNI3g/kXK5hbHNn13PHK3QyGU4hx0hAY8TbQ5xgYRfqshK4GH9SZZNNDxRzKrbATTZube4FtKiM/Omj+VtisGujPVM3SnYXTu4hiel7jysZgBre6YAqKDiO+w//sK2tf/+ySqfFCUb/R0EKAuMEpKSypvbjzrBTpmm0Kq2b42l1kwMgHXMWEkJOujZ7cL9EuvmcF4e6XQlMzhU6AQ7tEuRjRajezEAEOZLPRrDPA7e5tZAV6QRh21a1Nr7A8JPsJ/HF3lEEQNN2CYpYJ4fSlU57rrPY=
   on:

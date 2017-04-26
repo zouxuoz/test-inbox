@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import SendGrid from 'sendgrid';
-import TestInbox from '../build';
+import TestInbox from '../lib';
 
 dotenv.config({
   silent: process.env.NODE_ENV === 'production',
