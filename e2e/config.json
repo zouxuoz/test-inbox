@@ -1,0 +1,11 @@
+{
+  "roots": [
+    "<rootDir>/e2e"
+  ],
+  "modulePaths": [
+    "<rootDir>/e2e"
+  ],
+  "setupFiles": [
+    "<rootDir>/e2e/setup.js"
+  ]
+}

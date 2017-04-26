@@ -1,0 +1,27 @@
+{
+  "parser": "babel-eslint",
+
+  "extends": "airbnb-base",
+
+  "env": {
+    "browser": true,
+    "jest": true,
+  },
+
+  "globals": {
+    "sendgrid": true,
+    "inbox": true,
+    "jasmine": true
+  },
+
+  "rules": {
+    "global-require": "off",
+    "no-mixed-operators": "off",
+    "no-await-in-loop": "off",
+    "no-empty": "off",
+
+    "import/prefer-default-export": "off",
+
+    "no-param-reassign": ["error", { "props": false }]
+  },
+}

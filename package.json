@@ -1,0 +1,37 @@
+{
+  "name": "test-inbox",
+  "version": "0.1.0",
+  "main": "build/index.js",
+  "scripts": {
+    "e2e": "jest --config=e2e/config.json",
+    "lint": "eslint . --cache",
+    "build": "gulp build --gulpfile config/gulpfile.js --cwd .",
+    "watch": "gulp watch --gulpfile config/gulpfile.js --cwd .",
+    "travis": "./bin/travis.sh",
+    "postinstall": "npm run build"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "inbox": "^1.1.59",
+    "mailparser": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "del": "^2.2.2",
+    "dotenv": "^4.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-plumber": "^1.1.0",
+    "jest": "^19.0.2",
+    "sendgrid": "^5.0.1"
+  }
+}
