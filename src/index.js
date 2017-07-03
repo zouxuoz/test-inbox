@@ -44,16 +44,20 @@ const fetchMessage = async (client, test) => new Promise((resolve, reject) => {
 
 class TestInbox {
   constructor({ host, user, password }) {
-    this.client = inbox.createConnection(false, host, {
-      secureConnection: true,
-      auth: {
-        user,
-        pass: password,
-      },
-    });
+    this.host = host;
+    this.user = user;
+    this.password = password;
   }
 
   async connect() {
+    this.client = inbox.createConnection(false, this.host, {
+      secureConnection: true,
+      auth: {
+        user: this.user,
+        pass: this.password,
+      },
+    });
+
     return new Promise((resolve) => {
       this.client.connect();
 
