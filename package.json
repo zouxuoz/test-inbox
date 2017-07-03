@@ -1,6 +1,6 @@
 {
   "name": "test-inbox",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "lib/index.js",
   "scripts": {
     "e2e": "jest --config=e2e/config.json",
