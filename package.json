@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "inbox": "^1.1.59",
-    "mailparser": "^2.0.3"
+    "mailparser": "^2.0.5"
   },
   "devDependencies": {
     "babel-cli": "6.24.0",
