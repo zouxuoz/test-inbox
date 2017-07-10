@@ -1,10 +1,9 @@
-import inbox from 'inbox';
+import Imap from 'imap';
 import { simpleParser as parser } from 'mailparser';
 
-function retrieveMessage(client, uid, callback) {
+function retrieveMessage(stream, callback) {
   const chunks = [];
   let chunklength = 0;
-  const stream = client.createMessageStream(uid);
 
   stream.on('data', (chunk) => {
     chunks.push(chunk);
@@ -19,25 +18,34 @@ function retrieveMessage(client, uid, callback) {
 }
 
 const fetchMessage = async (client, test) => new Promise((resolve, reject) => {
-  client.openMailbox('INBOX', (err1) => {
+  client.openBox('INBOX', (err1, box) => {
     if (err1) reject(err1);
 
-    client.listMessages(-10, (err2, messages) => {
-      if (err2) reject(err2);
+    const f = client.seq.fetch(`${box.messages.total - 10}:${box.messages.total}`, {
+      bodies: '',
+      struct: true,
+    });
 
-      const message = messages.find(test);
-
-      if (message) {
-        retrieveMessage(client, message.UID, (a, b) => {
+    f.on('message', (msg) => {
+      msg.on('body', (stream) => {
+        retrieveMessage(stream, (a, b) => {
           parser(b.toString('utf8'), (err3, result) => {
             if (err3) throw err3;
 
-            resolve(result);
+            if (test(result)) {
+              resolve(result);
+            }
           });
         });
-      } else {
-        reject();
-      }
+      });
+    });
+
+    f.once('error', () => {
+      reject();
+    });
+
+    f.once('end', () => {
+      reject();
     });
   });
 });
@@ -50,18 +58,18 @@ class TestInbox {
   }
 
   async connect() {
-    this.client = inbox.createConnection(false, this.host, {
-      secureConnection: true,
-      auth: {
-        user: this.user,
-        pass: this.password,
-      },
+    this.client = new Imap({
+      tls: true,
+      port: 993,
+      host: this.host,
+      user: this.user,
+      password: this.password,
     });
 
     return new Promise((resolve) => {
       this.client.connect();
 
-      this.client.on('connect', () => {
+      this.client.once('ready', () => {
         resolve();
       });
     });
@@ -69,10 +77,7 @@ class TestInbox {
 
   async findOne({ to, subject } = {}, options) {
     const message = await this.find(
-      ({
-        to: [{ address: testTo }],
-        title: testSubject,
-      }) => testTo === to && testSubject === subject,
+      msg => msg.to.text === to && msg.subject === subject,
       options,
     );
 
@@ -98,7 +103,7 @@ class TestInbox {
   }
 
   async close() {
-    this.client.close();
+    this.client.end();
   }
 }
 
