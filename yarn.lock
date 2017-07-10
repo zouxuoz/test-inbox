@@ -2087,7 +2087,7 @@ hawk@~3.1.3:
     hoek "2.x.x"
     sntp "1.x.x"
 
-he@1.1.1, he@^1.0.0:
+he@^1.0.0, he@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
@@ -2118,9 +2118,9 @@ html-encoding-sniffer@^1.0.1:
   dependencies:
     whatwg-encoding "^1.0.1"
 
-html-to-text@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/html-to-text/-/html-to-text-3.1.0.tgz#7f07ef2173e5a0441e7315c192013a00a52d5e4a"
+html-to-text@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/html-to-text/-/html-to-text-3.2.0.tgz#0dfa5d27ff816b07281c79eaf60d408744ac6d89"
   dependencies:
     he "^1.0.0"
     htmlparser2 "^3.9.2"
@@ -2154,6 +2154,10 @@ iconv-lite@0.4.13:
 iconv-lite@0.4.15, iconv-lite@~0.4.13:
   version "0.4.15"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
+
+iconv-lite@0.4.17:
+  version "0.4.17"
+  resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.17.tgz#4fdaa3b38acbc2c031b045d0edcdfe1ecab18c8d"
 
 ignore@^3.2.0:
   version "3.2.7"
@@ -3015,21 +3019,20 @@ mailparser@^0.6.1:
     mimelib "^0.3.0"
     uue "^3.1.0"
 
-mailparser@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/mailparser/-/mailparser-2.0.3.tgz#28bb409b95341d421fbb57d4b1cf3532d89acb82"
+mailparser@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/mailparser/-/mailparser-2.0.5.tgz#24e66fec4fea97b847a62be8ed0113f312c1605c"
   dependencies:
     addressparser "1.0.1"
-    he "1.1.1"
-    html-to-text "3.1.0"
-    iconv-lite "0.4.15"
+    he "^1.1.1"
+    html-to-text "3.2.0"
+    iconv-lite "0.4.17"
     libmime "3.1.0"
-    mailsplit "4.0.0"
-    marked "0.3.6"
+    mailsplit "4.0.2"
 
-mailsplit@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/mailsplit/-/mailsplit-4.0.0.tgz#31f7e73cd0400c3f3d20ef6256bb2d6570e6698b"
+mailsplit@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/mailsplit/-/mailsplit-4.0.2.tgz#29dcbdd5705b29eecb0ebf4f9056a6886a2c6dfe"
   dependencies:
     libbase64 "0.1.0"
     libmime "3.1.0"
@@ -3056,10 +3059,6 @@ makeerror@1.0.x:
 map-cache@^0.2.0:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/map-cache/-/map-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
-
-marked@0.3.6:
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.6.tgz#b2c6c618fccece4ef86c4fc6cb8a7cbf5aeda8d7"
 
 matchdep@^1.0.0:
   version "1.0.1"
