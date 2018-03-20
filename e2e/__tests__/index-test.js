@@ -1,4 +1,4 @@
-import { sendTestMessage } from '../utils';
+const { sendTestMessage } = require('../utils');
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 180000;
 
