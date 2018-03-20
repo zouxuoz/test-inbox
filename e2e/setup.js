@@ -1,6 +1,6 @@
-import dotenv from 'dotenv';
-import SendGrid from 'sendgrid';
-import TestInbox from '../lib';
+const dotenv = require('dotenv');
+const SendGrid = require('sendgrid');
+const TestInbox = require('../lib');
 
 dotenv.config({
   silent: process.env.NODE_ENV === 'production',
