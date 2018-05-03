@@ -10,14 +10,14 @@
   "license": "MIT",
   "dependencies": {
     "imap": "^0.8.19",
-    "mailparser": "^2.0.5"
+    "mailparser": "^2.2.0"
   },
   "devDependencies": {
-    "dotenv": "^4.0.0",
+    "dotenv": "^5.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.7.0",
-    "jest": "^20.0.4",
-    "sendgrid": "^5.1.2"
+    "jest": "^22.4.3",
+    "sendgrid": "^5.2.3"
   }
 }
