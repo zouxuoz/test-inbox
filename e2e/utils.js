@@ -1,4 +1,4 @@
-const sendTestMessage = async ({ email, subject }) => {
+const sendTestMessage = ({ email, subject }) => {
   const request = sendgrid.emptyRequest({
     method: 'POST',
     path: '/v3/mail/send',

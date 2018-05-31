@@ -51,7 +51,7 @@ const fetchMessage = (client, test) => new Promise((resolve, reject) => {
 });
 
 class TestInbox {
-  constructor({ host, user, password }) {
+  constructor({ host, user, password } = {}) {
     this.host = host;
     this.user = user;
     this.password = password;
@@ -64,8 +64,8 @@ class TestInbox {
       host: this.host,
       user: this.user,
       password: this.password,
-      authTimeout: 15000,
-      connTimeout: 15000,
+      authTimeout: 60000,
+      connTimeout: 60000,
     });
 
     return new Promise((resolve, reject) => {
@@ -75,11 +75,11 @@ class TestInbox {
         resolve();
       });
 
-      this.client.once('error', function(err) {
+      this.client.once('error', (err) => {
         reject(err);
       });
 
-      this.client.once('end', function() {
+      this.client.once('end', () => {
         reject();
       });
     });
@@ -100,9 +100,11 @@ class TestInbox {
       throw new Error('TIMEOUT');
     }, timeout);
 
-    var whileFetchMessage = (message) => {
+    const whileFetchMessage = (message) => {
       if (!message && !abort) {
-        return fetchMessage(this.client, test).then(whileFetchMessage).catch(() => whileFetchMessage());
+        return fetchMessage(this.client, test)
+          .then(whileFetchMessage)
+          .catch(() => whileFetchMessage());
       }
 
       clearTimeout(timer);

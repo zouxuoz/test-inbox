@@ -6,7 +6,7 @@ beforeAll(async () => {
   try {
     await inbox.connect();
   } catch (e) {
-    console.log(e);
+    console.log('error', e);
   }
 });
 
@@ -24,10 +24,4 @@ it('find one message by subject', async () => {
   expect(message).toBeDefined();
 });
 
-afterAll(async () => {
-  try {
-    await inbox.close();
-  } catch (e) {
-    console.log(e);
-  }
-});
+afterAll(() => inbox.close());

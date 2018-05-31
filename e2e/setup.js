@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 const SendGrid = require('sendgrid');
-const TestInbox = require('../lib');
+const TestInbox = require('../src');
 
 dotenv.config({
   silent: process.env.NODE_ENV === 'production',
