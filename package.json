@@ -1,6 +1,6 @@
 {
   "name": "test-inbox",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "main": "lib/test-inbox.cjs.js",
   "module": "lib/test-inbox.esm.js",
   "scripts": {
